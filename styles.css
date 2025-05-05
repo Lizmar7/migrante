@@ -1,0 +1,259 @@
+/* Variables de colores */
+:root {
+    --primary-color: #1a5f7a;    /* Azul más oscuro y profesional */
+    --secondary-color: #2e8b57;  /* Verde esmeralda, representativo de Brasil */
+    --accent-color: #f28500;     /* Naranja cálido */
+    --text-color: #2c3e50;       /* Azul oscuro para mejor legibilidad */
+    --background-color: #f8f9fa; /* Fondo más suave */
+    --section-bg: #ffffff;
+    --high-contrast-bg: #000000;
+    --high-contrast-text: #ffffff;
+    --high-contrast-link: #ffff00;
+    --progress-color: var(--accent-color);
+}
+
+/* Estilos generales */
+* {
+    margin: 0; 
+    padding: 0; /* Elimina el padding y margin por defecto */
+    box-sizing: border-box; /* Asegura que el padding y el border no afecten el tamaño total del elemento */
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /*Fuente más moderna */
+    line-height: 1.6; /* Espaciado entre líneas */
+    color: var(--text-color); /* Color de texto más oscuro para mejor legibilidad */
+    background-color: var(--background-color); /* Fondo más suave */
+}
+
+/* Encabezado */
+header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); /* Degradado de colores */
+    color: white; /* Texto blanco para contraste */
+    font-size: 1.5rem; /* Tamaño de fuente más grande */
+    text-align: center; /* Centrado del texto */
+    padding: 3rem 1rem; /* Espaciado interno */
+    margin-bottom: 2rem; /* Espaciado inferior */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidad */
+}
+
+header h1 {
+    font-size: 2.5rem; /* Tamaño de fuente más grande para el título */
+    margin-bottom: 1rem; /* Espaciado inferior */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Sombra de texto para dar profundidad */
+}
+
+/* Navegación */
+nav {
+    background-color: var(--section-bg); /* Fondo blanco para contraste */
+    padding: 1rem; /* Espaciado interno */
+    margin-bottom: 2rem; /* Espaciado inferior */
+    display: flex; /* Flexbox para alinear elementos */
+    justify-content: center; /* Centrado horizontal */
+    gap: 1.5rem; /* Espaciado entre enlaces */
+    flex-wrap: wrap; /* Permite que los enlaces se ajusten en varias líneas si es necesario */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidad */
+    position: sticky; /* Fija la barra de navegación al hacer scroll */
+    top: 0; /* Se queda en la parte superior */
+    z-index: 100; /* Asegura que esté por encima de otros elementos */
+}
+
+nav a {
+    color: var(--primary-color); /* Color de texto azul oscuro */
+    text-decoration: none; /* Sin subrayado */
+    padding: 0.5rem 1rem; /* Espaciado interno */
+    border-radius: 20px; /* Bordes redondeados */
+    transition: all 0.3s ease; /* Transición suave para efectos */
+}
+
+nav a:hover {
+    background-color: var(--primary-color); /* Fondo azul oscuro al pasar el ratón */
+    color: white; /* Texto blanco al pasar el ratón */
+    transform: translateY(-2px); /* Efecto de elevación al pasar el ratón */
+}
+
+/* Secciones */
+section {
+    background-color: var(--section-bg); /* Fondo blanco para contraste */
+    border-radius: 10px; /* Bordes redondeados */
+    margin: 2rem auto; /* Espaciado superior e inferior */
+    max-width: 1200px; /* Ancho máximo */
+    padding: 2rem; /* Espaciado interno */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidad */
+    display: flex; /* Flexbox para alinear elementos */
+    flex-direction: row; /* Dirección de los elementos */
+    align-items: flex-start; /* Alineación al inicio */
+    gap: 2rem; /* Espaciado entre elementos */
+    transition: transform 0.3s ease; /* Transición suave para efectos */
+}
+
+/* Contenedores de imagen y texto */
+.image-container {
+    flex: 1; /* Ocupa el espacio restante */
+    min-width: 400px; /* Ancho mínimo */
+    max-width: 500px; /* Ancho máximo */
+    position: sticky; /* Fija la imagen al hacer scroll */
+    top: 100px; /* Se queda en la parte superior */
+}
+
+
+.image-container img {
+    width: 100%; /* Ancho completo del contenedor */
+    height: auto; /* Altura automática para mantener la proporción */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidad */
+    object-fit: cover; /* Ajusta la imagen al contenedor */
+    aspect-ratio: 16/9; /* Proporción de aspecto para la imagen */
+}
+
+.text-container {
+    flex: 1; /* Ocupa el espacio restante */
+    min-width: 400px; /* Ancho mínimo */
+    padding: 0 1rem; /* Espaciado interno */
+}
+
+/* Responsive */
+@media (max-width: 968px) {   
+    section {
+        flex-direction: column;  /* Cambia a columna en pantallas más pequeñas */
+    }
+
+    .image-container {
+        position: relative; /* Cambia a posición relativa */
+        top: 0; /* Restablece la posición superior */
+        min-width: 100%; /* Ancho mínimo 100% */
+        max-width: 100%; /* Ancho máximo 100% */
+    }
+
+    .text-container {
+        min-width: 100%; /* Ancho mínimo 100% */
+        padding: 0; /* Sin espaciado interno */
+    }
+}
+
+h2 {
+    color: var(--primary-color); /* Color azul oscuro */
+    margin-bottom: 1.5rem; /* Espaciado inferior */
+    font-size: 2rem; /* Tamaño de fuente más grande */
+    border-bottom: 3px solid var(--secondary-color); /* Línea inferior */
+    padding-bottom: 0.5rem; /* Espaciado inferior */
+    letter-spacing: 0.5px; /* Espaciado entre letras */
+    font-weight: 600; /* Peso de fuente más grueso */
+}
+
+p {
+    margin-bottom: 1rem; /* Espaciado inferior */
+}
+
+/* Enlaces */
+a {
+    color: var(--primary-color); /* Color azul oscuro */
+    text-decoration: none; /* Sin subrayado */
+    transition: color 0.3s ease; /* Transición suave para efectos */
+}
+
+a:hover {
+    color: var(--accent-color); /* Color naranja cálido al pasar el ratón */
+}
+
+/* Listas */
+ul {
+    list-style-type: none; /* Sin viñetas */
+    padding-left: 1rem; /* Espaciado interno */
+}
+
+ul li {
+    margin-bottom: 0.5rem; /* Espaciado inferior */
+    position: relative; /* Posición relativa para el pseudo-elemento */
+    padding-left: 1.5rem; /* Espaciado interno a la izquierda */
+}
+
+ul li::before {
+    content: "→"; /* Flecha como viñeta */
+    color: var(--secondary-color); /* Color verde esmeralda */
+    position: absolute; /* Posición absoluta */
+    left: 0; /* Alineado a la izquierda */
+}
+
+/* Pie de página */
+footer {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); /* Degradado de colores */
+    color: white; /* Texto blanco para contraste */
+    text-align: center; /* Centrado del texto */
+    padding: 2rem;  /* Espaciado interno */
+    margin-top: 3rem; /* Espaciado superior */
+}
+
+/**Pie de página */
+footer a:hover {
+    color: var(--accent-color); /* Color naranja cálido al pasar el ratón */
+    text-decoration: underline; /* Subrayado */
+}
+
+footer a {
+    color: white; /* Texto blanco */
+    text-decoration: underline; /* Subrayado */
+}
+
+/* Sección de ONGs */
+.ong-section {
+    text-align: center; /* Centrado del texto */
+    padding: 3rem 2rem; /* Espaciado interno */
+}
+
+.ong-buttons {
+    display: grid; /* Grid para disposición de botones */
+    grid-template-columns: repeat(3, 1fr); /* Tres columnas */
+    gap: 1.5rem; /* Espaciado entre botones */
+    margin-top: 2rem; /* Espaciado superior */
+}
+
+.ong-button {
+    display: flex; /* Flexbox para alinear elementos */
+    flex-direction: column; /* Columna para disposición de texto */
+    padding: 1.5rem; /* Espaciado interno */
+    background: linear-gradient(145deg, var(--primary-color), var(--secondary-color)); /* Degradado de colores */
+    color: white; /* Texto blanco */
+    border-radius: 10px; /* Bordes redondeados */
+    text-decoration: none; /* Sin subrayado */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;  /* Transición suave para efectos */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidad */
+}
+
+.ong-button:hover {
+    transform: translateY(-5px); /* Efecto de elevación al pasar el ratón */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada al pasar el ratón */
+    color: white; /* Texto blanco */
+}
+
+.ong-name {
+    font-size: 1.2rem; /* Tamaño de fuente más grande */
+    font-weight: bold; /* Peso de fuente más grueso */
+    margin-bottom: 0.5rem; /* Espaciado inferior */
+}
+
+.ong-description {
+    font-size: 0.9rem; /* Tamaño de fuente más pequeño */
+    opacity: 0.9; /* Opacidad para dar un efecto de desvanecimiento */
+}
+
+/* Seção de ONGs - Responsivo */
+@media (max-width: 968px) { 
+    .ong-buttons {
+        grid-template-columns: repeat(2, 1fr); /* Dos columnas */
+    }
+    
+    .ong-button {
+        padding: 1.3rem; /* Espaciado interno */
+    }
+}
+
+@media (max-width: 576px) {
+    .ong-buttons {
+        grid-template-columns: 1fr; /* Una columna */
+    }
+    
+    .ong-button {
+        padding: 1.2rem;    /* Espaciado interno */
+    }
+}
